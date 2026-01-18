@@ -29,6 +29,9 @@ jobs:
       # ((.:metadata.build_url))
 ```
 
+The published image is a minimal container image that contains only the
+resource binaries. No shell, package manager, or unix tooling are included.
+
 ## `source` Configuration
 
 This resource has no configuration and implements a no-op for its check. This
