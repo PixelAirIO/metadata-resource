@@ -102,7 +102,11 @@ func main() {
 	}
 
 	id, ok := req.Version["build_id"]
-	if ok && id != bm.BuildId {
+	if !ok {
+		fmt.Fprintln(os.Stderr, "no build_id in version")
+		os.Exit(1)
+	}
+	if id != bm.BuildId {
 		fmt.Fprintln(os.Stderr, "build_id in version does not match current build ID from env $BUILD_ID")
 		os.Exit(1)
 	}

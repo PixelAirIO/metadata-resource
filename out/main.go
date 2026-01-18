@@ -4,8 +4,6 @@ import (
 	"encoding/json"
 	"fmt"
 	"os"
-	"strconv"
-	"time"
 )
 
 func main() {
@@ -13,11 +11,13 @@ func main() {
 	fmt.Fprintln(os.Stderr, "Source: github.com/PixelAirIO/metadata-resource")
 
 	buildId := os.Getenv("BUILD_ID")
-	now := time.Now().UnixMicro()
+	if buildId == "" {
+		fmt.Fprintln(os.Stderr, "no $BUILD_ID found in env")
+		os.Exit(1)
+	}
 	resp := OutResponse{
 		Version: map[string]string{
-			"timestamp": strconv.FormatInt(now, 10),
-			"build_id":  buildId,
+			"build_id": buildId,
 		},
 	}
 

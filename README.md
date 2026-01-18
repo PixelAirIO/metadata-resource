@@ -25,6 +25,7 @@ jobs:
       - put: metadata
       - load_var: metadata
         file: metadata/build.json
+        reveal: true
       # Can then reference using the local var
       # ((.:metadata.build_url))
 ```
