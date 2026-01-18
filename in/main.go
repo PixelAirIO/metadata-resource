@@ -99,6 +99,11 @@ func main() {
 			Name:  "instance_vars",
 			Value: instanceVars,
 		})
+
+		fmt.Fprintln(os.Stderr, "Instance vars:")
+		for k, v := range bm.InstanceVars {
+			fmt.Fprintf(os.Stderr, "%s: %s", k, v)
+		}
 	}
 
 	id, ok := req.Version["build_id"]
