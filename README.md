@@ -1,5 +1,7 @@
 # Metadata Resource
 
+![Build Status](https://ci.pixelair.io/api/v1/teams/main/pipelines/paio-resources-types/jobs/publish-patch/badge?vars.resource_name=%22metadata%22&title=Build%20Status)
+
 Fetches the [Build
 Metadata](https://concourse-ci.org/docs/resource-types/implementing/#metadata)
 for a Concourse job, making it available for later steps in a job.
